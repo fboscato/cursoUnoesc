@@ -1,0 +1,142 @@
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+const porta = 8080;
+
+// Configura o CORS
+app.use(cors({ origin: '*' }));
+
+// Instancia o servidor
+app.listen(porta, 
+    () => console.log(`Servidor iniciado na porta: ${porta}`)
+);
+
+// Responde a requisição no endereço http://localhost:8080/
+app.get('/', (request, response) => {
+    response.status(200).send('<h2>Servidor node.js</h2>');
+}); 
+
+function leDadosForm(req) {
+    const email = req.query['nEmail'];
+    const senha = req.query['nSenha'];
+
+    return [ email, senha ];
+}
+
+app.get('/autentica-v1', function(req, res) {
+    const email = 'herculano.debiasi@gmail.com';
+    const senha = '1234';
+
+    const [ emailForm, senhaForm ] = leDadosForm(req);
+
+    let usuarioAutenticado = false;
+    if (email === emailForm && senha === senhaForm) {
+        usuarioAutenticado = true;
+    }
+
+    retornaReposta(res, usuarioAutenticado); 
+});
+
+app.get('/autentica-v2', function(req, res) {
+    const emails = ['fulano@gmail.com', 'beltrano@gmail.com', 'herculano.debiasi@gmail.com'];
+    const senhas = ['123456', '12345', '1234'];
+
+    const [ emailForm, senhaForm ] = leDadosForm(req);
+
+    let usuarioAutenticado = false;
+    for (let i = 0; i < emails.length; i++) {
+        if (emails[i] === emailForm && senhas[i] === senhaForm) {
+            usuarioAutenticado = true;
+            break;
+        } 
+    }
+
+    retornaReposta(res, usuarioAutenticado); 
+});
+
+app.get('/autentica-v3', function(req, res) {
+    const dados = {
+        usuarios: [
+            { email: 'Fulano', senha: '1234'},
+            { email: 'Beltrano', senha: '4321'},
+            { email: 'herculano.debiasi@gmail.com', senha: '1234'}
+        ]
+    };
+
+    const [ emailForm, senhaForm ] = leDadosForm(req);
+
+    let usuarioAutenticado = false;
+    for (usuario of dados.usuarios) {
+        if (usuario.email === emailForm && usuario.senha === senhaForm) {
+            usuarioAutenticado = true;
+            break;
+        } 
+    }
+
+    retornaReposta(res, usuarioAutenticado); 
+});
+
+app.get('/autentica-v4', function(req, res) {
+    class Usuario {
+        #email;
+        #senha;
+
+        constructor(email, senha) {
+            this.#email = email;
+            this.#senha = senha;
+        }
+
+        get email() { return this.#email; }
+        set email(email) { this.#email = email; }
+
+        get senha() { return this.#senha; }
+        set senha(senha) { this.#senha = senha; }
+
+        autentica(email, senha) {
+            return (email === this.#email && senha === this.#senha);
+        }
+    }
+
+    const usuarios = [
+        new Usuario('Fulano', '1234'),
+        new Usuario('Beltrano', '4321'),
+        new Usuario('herculano.debiasi@gmail.com', '1234')
+    ];
+
+    const [ emailForm, senhaForm ] = leDadosForm(req);
+
+    let usuarioAutenticado = false;
+    for (usuario of usuarios) {
+        if (usuario.email === emailForm && usuario.senha === senhaForm) {
+            usuarioAutenticado = true;
+            break;
+        } 
+    }
+
+    retornaReposta(res, usuarioAutenticado); 
+});
+
+function retornaReposta(res, usuarioAutenticado) {
+    const msgAlert = `Usuário ${usuarioAutenticado ? '' : 'não'} autenticado!`;
+    let tipoAlerta = usuarioAutenticado ? 'alert-success' : 'alert-danger';
+    let mensagem = `<h3><div class="alert ${tipoAlerta}">${msgAlert}</div></h3>`;
+
+    HTML = `
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" crossorigin="anonymous">
+
+        <hr>
+        <div class="container mt-3" id="msg">
+            ${mensagem}
+            
+            <button type="button" onclick="window.history.back()" class="btn btn-outline-danger">
+                <i class="fas fa-door-open"></i>
+                Voltar
+            </button>
+        </div>
+    `;
+
+    res.send(HTML);
+}

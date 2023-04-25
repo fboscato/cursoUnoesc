@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <link rel="shortcut icon" href="./assets/imagens/icon.png">
+
+  <title>DÉVI-TEÍ - Home</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/imagens/logo.png" alt="DÉVI-TEÍ" title="DÉVI-TEÍ">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+          aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobre.html">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contato.html">Contato</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Cursos
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="informatica.html">Informática</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <a class="dropdown-item" href="culinaria.html">Culinária</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Procurar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="cursos" class="container">
+      <h1 class="text-center">Conheça nossos Cursos</h1>
+      <p class="text-center">Faça seu curso onde estiver, apenas conectado à internet! Cursos disponíveis 24 horas por
+        dia!</p>
+      <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="card">
+            <img src="./assets/imagens/curso1.jpg" class="card-img-top" alt="Curso de montagem e manutenção">
+            <div class="card-body">
+              <h5 class="card-title">Curso de Montagem de Manutenção</h5>
+              <p class="card-text">Aprenda a montar, formatar e instalar Sistemas Operacionais para toda a família e
+                amigos!</p>
+              <a href="#" class="btn btn-info">Ver Curso</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="card">
+            <img src="./assets/imagens/curso2.jpg" class="card-img-top" alt="Curso de Python">
+            <div class="card-body">
+              <h5 class="card-title">Curso de Python</h5>
+              <p class="card-text">Aprenda a desenvolver nesta incrível linguagem!</p>
+              <a href="#" class="btn btn-info">Ver Curso</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="card">
+            <img src="./assets/imagens/curso3.jpg" class="card-img-top" alt="Curso de PHP">
+            <div class="card-body">
+              <h5 class="card-title">Curso de PHP</h5>
+              <p class="card-text">Aprenda a desenvolver para web (back-end) com uma das linguagens mais utilizadas na
+                área!</p>
+              <a href="#" class="btn btn-info">Ver Curso</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="card">
+            <img src="./assets/imagens/curso4.jpg" class="card-img-top" alt="Curso de HTML">
+            <div class="card-body">
+              <h5 class="card-title">Curso de HTML</h5>
+              <p class="card-text">Aprenda a desenvolver para web (front-end) com uma das linguagens mais utilizadas na
+                área!</p>
+              <a href="#" class="btn btn-info">Ver Curso</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <main>
+    <section id="banner" class="carousel slide carousel-fade d-block" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#banner" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="./assets/imagens/banner1.jpg" class="d-block w-100" alt="Cursos Tecnologia"
+            title="Cursos Tecnologia">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Cursos de Tecnologia</h5>
+            <p>Aprenda Java em 24 horas</p>
+            <p>
+              <a href="cadastro.html" title=-"Cadastro" class="btn btn-danger">
+                <i class="fa-solid fa-check"></i> Cadastre-se
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="./assets/imagens/banner2.jpg" class="d-block w-100" alt="Cursos 24 horas" title="Cursos 24 horas">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Cursos de Culinária</h5>
+            <p>Culinária francesa e japonesa!</p>
+            <p>
+              <a href="cadastro.html" title=-"Cadastro" class="btn btn-success">
+                <i class="fa-solid fa-check"></i> Cadastre-se
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#banner" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#banner" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </section>
+  </main>
+
+  <main>
+    <section class="jumbotron">
+      <div class="container text-center">
+        <i class="fas fa-quote-left"></i>
+        <span class="lead font-italic">Eu fiz dois cursos no DÉV-TEÍ <em>online</em>, foram
+          ótimos cursos que melhoraram minha capacitação e abriu as portas do mercado de trabalho, até
+          que eu cheguei na Maicrosofiti e me tornei CEO. Recomendo fortemente.</span>
+        <i class="fas fa-quote-right"></i>
+        <p>
+          <img src="./assets/imagens/bill.jpg" alt="Bíu Gueites" title="Bill Gueites" class="rounded-circle">
+          <p>
+            <strong>Bíu Gueites</strong>
+            <br>
+            Maicrosofiti
+          </p>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <main>
+    <section id="news" class="container">
+      <h1 class="text-center">Receba Novidades</h1>
+      <p class="text-center">Inscreva-se na nossa <em>news letter</em> e receba todas as
+        novidades dos nossos cursos <em>online</em>:</p>
+      <form name="news" method="post" action="assinar.js">
+        <div class="input-group input-group-lg">
+          <input type="email" name="email" class="form-control" placeholder="Digite seu e-mail" required>
+          <span class="input-group-text">
+            <button type="submit" class="btn fa-lg">
+              <i class="fas fa-check"></i>
+            </button>
+          </span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4 col-lg-4 col-12 text-center">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Rua da Assembleia, 10<br>Rio de Janeiro - RJ</p>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-12 text-center">
+          <i class="fas fa-mobile-alt"></i>
+          <p>(011) 1406<br>(0800) 111406</p>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-12 text-center">
+          <i class="fas fa-envelope"></i>
+          <p>devi@tei.com</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6">
+          2022 - Todos os direitos reservados
+        </div>
+        <div class="col-xl-6 col-lg-6 icones">
+          <a class="social" href="http://www.facebook.com" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a class="social" href="http://www.instagram.com" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a class="social" href="http://www.twitter.com" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
